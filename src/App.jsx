@@ -24,8 +24,14 @@ function App() {
 
   return (
       <>
-          <input type="number" value={balance} onChange={(e) => setBalance(e.target.value)}/>
-          <input type="number" value={interest} onChange={(e) => setInterest(e.target.value)}/>
+          <label>
+              Solde départ
+              <input type="number" value={balance} onChange={(e) => setBalance(e.target.value)}/>
+          </label>
+          <label>
+              Taux départ
+              <input type="number" value={interest} onChange={(e) => setInterest(e.target.value)}/>
+          </label>
 
           <Form onAdd={handleFormSubmit}/>
           <ListOperation operations={operations}/>

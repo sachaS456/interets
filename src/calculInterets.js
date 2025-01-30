@@ -34,8 +34,6 @@ export default function calculInterets(solde, taux, operations) {
         });
         interets += (soldeChangeant * taux * 15) / 36_000;
         soldeChangeant += depotTemp;
-
-        console.log(soldeChangeant)
     }
 
     return soldeChangeant + interets;
