@@ -4,15 +4,18 @@ export default function ListOperation({operations}) {
     const operationsTypes = ['Dépôt', 'Retrait'];
 
     return (
-        <ul>
+        <table>
+            <thead>
+                <tr><td>Date opération</td><td>Type opération</td><td>valeur opération</td></tr>
+            </thead>
             {operations.map((operation, index) => {
                 return (
-                    <li key={index}>
-                        <span>{operation.get('date')}</span> - <span>{operation.get('value')} €</span> - <span>{operationsTypes[operation.get('type')]}</span>
-                    </li>
+                    <tr key={index}>
+                        <td>{operation.get('date')}</td>  <td>{operation.get('value')} €</td> <td>{operationsTypes[operation.get('type')]}</td>
+                    </tr>
                 )
             })}
-        </ul>
+        </table>
     )
 }
 

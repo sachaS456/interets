@@ -24,21 +24,32 @@ function App() {
 
   return (
       <>
-          <label>
-              Solde départ
-              <input type="number" value={balance} onChange={(e) => setBalance(e.target.value)}/>
-          </label>
-          <label>
-              Taux départ
-              <input type="number" value={interest} onChange={(e) => setInterest(e.target.value)}/>
-          </label>
+          <div className="input">
+              <div className="boxshadw">
+                  <label>
+                      Solde départ
+                      <input type="number" value={balance} onChange={(e) => setBalance(e.target.value)}/>
+                  </label>
+                  <label>
+                      Taux départ
+                      <input type="number" value={interest} onChange={(e) => setInterest(e.target.value)}/>
+                  </label>
+              </div>
 
-          <Form onAdd={handleFormSubmit}/>
-          <ListOperation operations={operations}/>
+              <Form onAdd={handleFormSubmit}/>
 
-          <button onClick={handleClick}>Calculer</button>
+              <div className="result boxshadw">
+                  <h2>Résultat</h2>
+                  <button onClick={handleClick}>Calculer</button>
+                  <span>{benef}</span>
+              </div>
+          </div>
 
-          <span>{benef}</span>
+          <div className="operation">
+              <h2>Historique des opérations</h2>
+              <ListOperation operations={operations}/>
+          </div>
+
       </>
   )
 }
